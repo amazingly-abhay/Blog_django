@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Latest Blogs</h1>
+    {% for post in posts %}
+    <div class="card my-3" style="background-color: rgb(226, 233, 232);">
+        <div class="card-header" >
+            <h2 style="color: black; font-family: 'Times New Roman', Times, serif; "><b>{{post.title}}</b></h2>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0 mx-5">
+            <p>{{post.content}}</p>
+            <footer class="blockquote-footer"> <p>By {{post.author}} on {{post.date}}</p> 
+          </blockquote>
+        </div>
+      </div>
+   
+   
+    
+    {% endfor %}
+{% endblock %}
