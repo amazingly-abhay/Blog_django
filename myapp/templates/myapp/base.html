@@ -26,11 +26,20 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" href="/register/">Resigter</a>
+                <a class="nav-link" aria-current="page" href="/about/">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about/">About</a>
+                {% if user.is_authenticated %}
+                <a class="nav-link" aria-current="page" href="/logout/">Logout</a>
+                {% else %}
+                  <a class="nav-link" aria-current="page" href="/register/">Resigter</a>
+                  <a class="nav-link" aria-current="page" href="/login/">Login</a>
+                  {% endif %}
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/admin/">Admin</a>
               </li>
               
             </ul>
