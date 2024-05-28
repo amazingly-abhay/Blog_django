@@ -16,4 +16,8 @@ def register(request):
         form=UserRegisterForm()
     return render(request,'users/register.html',{'form':form})
 
+def logout(request):
+    if request.method =='POST':
+            messages.success(request, f'Account is logged out')
+            return redirect('home-page')
 
